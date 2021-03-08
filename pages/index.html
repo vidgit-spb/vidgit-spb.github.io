@@ -1,0 +1,32 @@
+<html>
+    <body>
+         shame on me 
+
+         <button type='button' onclick="countClicks()">CLick))))</button>
+         <p><b>clicks count</b><br>
+         <input type="text" size="15" id = "count">
+         <p><b>time clicked</b><br>
+         <input type="text" size="40" id = "timeClicked">
+         <p><b>average click per minute</b><br>
+         <input type="text" size="40" id = "averageClickPerSecond">
+         <>
+         <script> 
+         let startClickingTime = new Date();
+         let i = 0;
+
+              function countClicks(){
+                  i++;
+                  let currentDate    = new Date();
+                  let timeOfClicking = (currentDate - startClickingTime) / 1000;
+                  let apm = i/timeOfClicking * 60;
+                  let hexCurrentBodyColor = (i*10).toString(16);
+                  document.getElementById("count").value = i;
+                  document.getElementById("timeClicked").value = timeOfClicking;
+                  document.getElementById("averageClickPerSecond").value = apm;
+                  document.body.style.backgroundColor = `${hexCurrentBodyColor}`;
+                  console.log(hexCurrentBodyColor);
+                  return i;
+              }
+        </script>
+    </body>    
+</html> 
